@@ -1,0 +1,14 @@
+Userdata code: #configuration of every instance created via script
+This code is converted in base64 first and then used in launch template as “userdata.txt”
+Site: https://www.base64encode.org/ #site used for encoding the code
+#!/bin/bash
+yum update -y
+sudo su
+yum install -y httpd
+yum install -y git
+y
+systemctl start httpd
+systemctl enable httpd
+git clone https://github.com/kapana031/Assignment7/
+cd Assignment7
+cp index.html /var/www/html/
